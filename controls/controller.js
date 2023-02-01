@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const URL = 'https://frontend-take-home.fetchrewards.com/form';
 
-
 const getSelectionData = async () => {
   return await axios.get(URL);
 }
