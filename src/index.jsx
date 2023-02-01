@@ -12,15 +12,29 @@ const App = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [occupations, setOccupations] = useState('');
-  const [states, setStates] = useState('');
+  const [occupation, setOccupation] = useState('');
+  const [state, setState] = useState('');
+  const [stateOptions, setStateOptions] = useState([]);
+  const [occupationOptions, setOccupationOptions] = useState([]);
+
+  useEffect(() => {
+    getSelectionData()
+      .then(res => {
+        setOccupationOptions(res.data.occupations);
+        setStateOptions(res.data.states);
+      })
+  }, [])
 
   return (
     <div>
       <form>
-        Form
-        <Occupation />
-        <State />
+        <label htmlFor='occupations'>Choose an occupation:</label>
+        <select name='occupations' id='occupations' defaultValue='none'>
+          <option value='none' disabled hidden>Select an Option</option>
+          {occupationOptions.map(option => {
+            return <option key={option} value={option}>{option}</option>
+          })}
+        </select>
       </form>
     </div>
   )

@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const URL = 'https://frontend-take-home.fetchrewards.com/form';
 
-const getSelectionData = async () => {
-  return await axios.get(URL);
+const getSelectionData = () => {
+  return axios.get(URL);
 }
 
-const postFormData = async (data) => {
-  return await axios.post(URL, data);
+const postFormData = (data) => {
+  return axios.post(URL, data);
 }
 
 export { getSelectionData, postFormData }
