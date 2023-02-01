@@ -1,6 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { getSelectionData, postFormData } from '../controls/controller.js';
+import Occupation from './inputs/Occupation.jsx';
+import State from './inputs/State.jsx';
 
 const root = createRoot(document.getElementById("root"));
 
@@ -10,13 +12,15 @@ const App = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [occupation, setOccupation] = useState('');
-  const [state, setState = useState('')];
+  const [occupations, setOccupations] = useState('');
+  const [states, setStates] = useState('');
 
   return (
     <div>
       <form>
         Form
+        <Occupation />
+        <State />
       </form>
     </div>
   )
