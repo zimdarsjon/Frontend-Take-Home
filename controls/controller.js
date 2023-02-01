@@ -10,4 +10,4 @@ const postFormData = async (data) => {
   return await axios.post(URL, data);
 }
 
-module.exports = { getSelectionData, postFormData }
+export { getSelectionData, postFormData }
